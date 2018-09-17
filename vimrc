@@ -119,3 +119,4 @@ set nomodeline
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+let g:pymode_folding = 0

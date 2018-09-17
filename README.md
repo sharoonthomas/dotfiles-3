@@ -10,9 +10,17 @@
 
 [![Join the chat at https://gitter.im/skwp/dotfiles](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/skwp/dotfiles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-#### sh -c "\`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh \`"
+#### sh -c "\`curl -fsSL https://raw.githubusercontent.com/sharoonthomas/dotfiles-3/master/install.sh \`"
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
+
+
+## Rebasing with skwp/dotfiles
+
+```
+git remote add skwp git@github.com:skwp/dotfiles
+git pull --rebase skwp master
+```
 
 ## What is YADR?
 
@@ -41,14 +49,14 @@ Please use GitHub Issues for pull requests or bug reports only.
 To get started please run:
 
 ```bash
-sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
+sh -c "`curl -fsSL https://raw.githubusercontent.com/sharoonthomas/dotfiles/master/install.sh`"
 ```
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
 about each one, use:
 
 ```bash
-sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`" -s ask
+sh -c "`curl -fsSL https://raw.githubusercontent.com/sharoonthomas/dotfiles/master/install.sh`" -s ask
 ```
 
 ## Wait, you're not done! Do this:
@@ -290,11 +298,10 @@ Assuming your host system has Docker & Docker Compose properly installed, run:
 
     docker-compose run dotfiles
 
-This will build the container image if it never built it before (which may take a while -- future times will be faster) and then run a `zsh` session inside that container for you.
+This will build the container image it never built it before (which may take a while -- future times will be faster) and then run a `zsh` session inside that container for you.
 There you can play around, test commands, aliases, etc.
 
-*Warning*: this repo is primarily macOS oriented. So any support for Linux can only be done with the help of the community.
-
+*Warning*: this repo is primarly macOS oriented. So any support for Linux can only be done with the help of the community.
 
 ## Misc
 

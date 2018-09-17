@@ -89,6 +89,18 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+	addpr = "!f() { git fetch origin pull/$1/head:pr/$1; }; f"
+	addprx = "!f() { b=`git symbolic-ref -q --short HEAD` && \
+		echo \"Making branch for pull request #$1 [pr/$1]\" && \
+		git fetch origin pull/$1/head:pr/$1 && \
+		echo \"Rebasing pr/$1 onto $b...\" && \
+		git fetch -q -f origin pull/$1/merge:refs/PR_MERGE_HEAD && \
+		git rebase -q --onto $b PR_MERGE_HEAD^ pr/$1 && \
+		git checkout -q $b && echo && \
+		git diff --stat $b..pr/$1 && echo && \
+		git log --oneline $b..pr/$1; \
+		git update-ref -d refs/PR_MERGE_HEAD; \
+		}; f"
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
@@ -125,3 +137,7 @@
   enabled = true
 [include]
   path = .gitconfig.user
+[user]
+  name = Sharoon Thomas
+  email = sharoon.thomas@fulfil.io
+	signingkey = F87C6A2DF9BB6DF8

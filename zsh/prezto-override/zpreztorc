@@ -36,6 +36,7 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'git' \
   'osx' \
+  'python' \
   'ruby' \
   'syntax-highlighting' \
   'history-substring-search' \
